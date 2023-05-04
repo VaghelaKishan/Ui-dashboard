@@ -1,0 +1,172 @@
+
+<section class="h-100% gradient-custom-2"  >
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7" style="width: 100.33333333%;">
+          <div class="card">
+            <div class="rounded-top text-white d-flex flex-row" style="background-color: #040404; height:165px;">
+              <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                <img src="assets/Profile-Male-PNG.png"
+                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2 rounded-circle"
+                  style="width: 150px; z-index: 1">
+                
+              </div>
+              <div class="ms-3" style="margin-top: 100px;">
+                <h5>{{data.firstname}}</h5>
+                <p>{{data.lastname}}</p>
+              </div>
+            </div>
+            <div class="p-4 text-black" style="background-color: #f8f9fa;">
+              <div class="d-flex justify-content-end text-center py-1">
+                
+              </div>
+            </div>
+            
+            <div class="card-body p-4 text-black" >
+              <div class="mb-5"> 
+                <h6>Personal Information</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>FirstName</h6>
+                      <p class="text-muted">{{data.firstname}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>LastName</h6>
+                      <p class="text-muted">{{data.lastname}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>MiddleName</h6>
+                      <p class="text-muted">{{data.middlename}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Date Of Birth</h6>
+                      <p class="text-muted">{{data.date}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Age</h6>
+                      <p class="text-muted">{{data.age}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Gender</h6>
+                      <p class="text-muted">{{data.gender}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Qualification</h6>
+                      <p class="text-muted">{{data.qualification}}</p>
+                    </div>
+                  </div>
+                  
+                  <h6>Contact Details</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <p class="text-muted">{{data.email}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Phone</h6>
+                      <p class="text-muted">{{data.phone}}</p>
+                    </div>
+                  </div>
+
+                  <h6>Residencial Details</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Country</h6>
+                      <p class="text-muted">{{data.country}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>State</h6>
+                      <p class="text-muted">{{data.state}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>City</h6>
+                      <p class="text-muted">{{data.city}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Address</h6>
+                      <p class="text-muted">{{data.address}}</p>
+                    </div>
+                    
+                  </div>
+                  <button class="material-icons btn btn-primary btn-lg"  (click)="openModal(editProfileModal,data)">EDIT</button>
+                  <button class="material-icons btn btn-dark btn-lg" routerLink="/grid">Back</button>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- modal -->
+  
+<ng-template #editProfileModal let-modal>
+    <div class="modal-header">
+     <h5 class="modal-title" id="editProfileLabel">Edit Profile</h5>
+     <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+     </button>
+    </div>
+    
+    <div class="modal-body">
+     <form [formGroup]="editProfileForm">
+      <div class="form-group row">
+       <label for="firstname" class="col-sm-4 col-form-label">First Name</label>
+       <div class="col-sm-8">
+        <input type="text" class="form-control" formControlName="firstname" id="firstname">
+       </div>
+      </div>
+      <div class="form-group row">
+       <label for="lastname" class="col-sm-4 col-form-label">Last Name</label>
+       <div class="col-sm-8">
+        <input type="text" class="form-control" formControlName="lastname" id="lastname">
+       </div>
+      </div>
+      <div class="form-group row">
+       <label for="email" class="col-sm-4 col-form-label">Email</label>
+       <div class="col-sm-8">
+        <input type="email" class="form-control" formControlName="email" id="email">
+       </div>
+      </div>
+      <div class="form-group row">
+        <label for="username" class="col-sm-4 col-form-label">Phone No</label>
+        <div class="col-sm-8">
+         <input type="text" class="form-control" formControlName="phone" id="phone">
+        </div>
+       </div>
+      <div class="form-group row">
+        <label for="username" class="col-sm-4 col-form-label">Date Of Birth</label>
+        <div class="col-sm-8">
+         <input type="text" class="form-control" formControlName="date" id="date">
+        </div>
+       </div>
+      <div class="form-group row">
+        <label for="username" class="col-sm-4 col-form-label">Age</label>
+        <div class="col-sm-8">
+         <input type="text" class="form-control" formControlName="age" id="age">
+        </div>
+       </div>
+      <div class="form-group row">
+        <label for="username" class="col-sm-4 col-form-label">Qualification</label>
+        <div class="col-sm-8">
+         <input type="text" class="form-control" formControlName="qualification" id="qualification">
+        </div>
+       </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+       <button type="submit" class="btn btn-primary" (click)="onSubmit()" >Save changes</button>
+      </div>
+     </form>
+    </div>
+   </ng-template>
+    

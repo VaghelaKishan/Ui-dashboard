@@ -1,0 +1,81 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "firstname": "Kishan",
+      "lastname": "Vaghela",
+      "email": "vaghelakishan59@gmail.com",
+      "dob": "2001-11-05T18:30:00.000Z",
+      "gender": "male",
+      "qualification": "Graduate",
+      "company": "Droisys",
+      "id": 1
+    },
+    {
+      "firstname": "Kevin",
+      "lastname": "Vaghela",
+      "email": "kevinvaghela2@gmail.com",
+      "dob": "2002-04-05T18:30:00.000Z",
+      "gender": "male",
+      "qualification": "Graduate",
+      "company": "Google",
+      "id": 2
+    },
+    {
+      "firstname": "Raj",
+      "lastname": "Boda",
+      "email": "rajboda444@gmail.com",
+      "dob": "2002-06-12T18:30:00.000Z",
+      "gender": "female",
+      "qualification": "Diploma",
+      "company": "store",
+      "id": 3
+    },
+    {
+      "firstname": "Nishit",
+      "lastname": "Kamani",
+      "email": "kamaninishit333@gmail.com",
+      "dob": "2002-06-13T18:30:00.000Z",
+      "gender": "male",
+      "qualification": "Post Graduate",
+      "company": "Founder of Droisys",
+      "id": 4
+    },
+    {
+      "firstname": "Doshi",
+      "lastname": "Kirtan",
+      "email": "kirtandoshi2gmail.com",
+      "dob": "2023-04-14T18:30:00.000Z",
+      "gender": "male",
+      "qualification": "Diploma",
+      "company": "Creative",
+      "id": 5
+    },
+    {
+      "firstname": "Shabbir",
+      "lastname": "Nakani",
+      "email": "nakamishabbir@gmail.com",
+      "dob": "2023-04-01T18:30:00.000Z",
+      "gender": "male",
+      "qualification": "Post Graduate",
+      "company": "Web Code geeni",
+      "id": 6
+    }
+  ]
+}

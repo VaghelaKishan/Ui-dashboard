@@ -1,0 +1,350 @@
+<!-- <h1 class="text-center mt-2 bg-dark text-white">User Dashbords<h5>Welcome to {{fullname}}</h5></h1>
+<button (click)="logout()" class="float-end btn btn-danger " >Logout</button><br>
+<table class="table align-middle mb-0 bg-white mt-4">
+  <thead class="bg-light">
+    <tr>
+      <th>Name</th>
+      <th>Phone No</th>
+      <th>Date Of Birth</th>
+      <th>Qualification</th>
+      <th>Age</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let user of User">
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+            src="https://avatars.githubusercontent.com/u/102711623?v=4"
+            alt=""
+            style="width: 45px; height: 45px"
+            class="rounded-circle"
+            />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">{{user.firstname}} {{user.lastname}}</p>
+            <p class="text-muted mb-0">{{user.email}}</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">{{user.phone}}</p>
+      </td>
+      <td>
+        <span class="badge-success rounded-pill d-inline">{{user.date}}</span>
+      </td>
+      <td>{{user.qualification}}</td>
+      <td>{{user.age}}</td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm btn-rounded"
+          routerLink="/register">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button type="button" class="btn btn-link btn-sm btn-rounded"
+          routerLink="/register">
+          <i class="material-icons">delete</i>
+        </button>
+
+      </td>
+    </tr>
+   
+  </tbody>
+</table> -->
+
+
+
+<!-- <section class="h-100% gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7" style="width: 100.33333333%;">
+          <div class="card">
+            <div class="rounded-top text-white d-flex flex-row" style="background-color: #040404; height:165px;">
+              <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                <img src="assets/Profile-Male-PNG.png"
+                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2 rounded-circle"
+                  style="width: 150px; z-index: 1">
+                
+              </div>
+              <div class="ms-3" style="margin-top: 100px;">
+                <h5>Andy Horwitz</h5>
+                <p>New York</p>
+              </div>
+            </div>
+            <div class="p-4 text-black" style="background-color: #f8f9fa;">
+              <div class="d-flex justify-content-end text-center py-1">
+                
+              </div>
+            </div>
+            
+            <div class="card-body p-4 text-black">
+              <div class="mb-5"> 
+                <h6>Personal Information</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>FirstName</h6>
+                      <p class="text-muted">First Name</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>LastName</h6>
+                      <p class="text-muted">Last Name</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>MiddleName</h6>
+                      <p class="text-muted">Middle Name</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>DOB</h6>
+                      <p class="text-muted">DOB</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Age</h6>
+                      <p class="text-muted">Age</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Gender</h6>
+                      <p class="text-muted">Gender</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Qualification</h6>
+                      <p class="text-muted">Qualification</p>
+                    </div>
+                  </div>
+                  
+                  <h6>Contact Details</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <p class="text-muted">info@example.com</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Phone</h6>
+                      <p class="text-muted">123 456 789</p>
+                    </div>
+                  </div>
+
+                  <h6>Residencial Details</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Country</h6>
+                      <p class="text-muted">Country</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>State</h6>
+                      <p class="text-muted">State</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>City</h6>
+                      <p class="text-muted">City</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Address</h6>
+                      <p class="text-muted">Address</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Address</h6>
+                      <p class="text-muted">Address</p>
+                    </div>
+                  </div>
+                  <button class="material-icons btn btn-primary btn-lg">EDIT</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
+
+
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <ng-container *ngIf="Role != 'User'">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="grid" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
+                    <li>
+                        <a href="grid"  data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white ">Dashboard</span> </a>
+                    </li>
+                    <li>
+                        <a href="register3"  data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white ">View Profile</span> </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a  class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../../assets/Profile-Male-PNG.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">User</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" >New project...</a></li>
+                        <li><a class="dropdown-item" >Settings</a></li>
+                        <li><a class="dropdown-item" >Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" >Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </ng-container>
+        <div class="col py-0">
+            <h1 class="text-center mt-2 bg-primary text-white">User Dashboard<h5>
+              Hello <h3>{{fullname}}</h3></h5></h1>
+<button (click)="logout()" class="float-end btn btn-danger " >Logout</button><br>
+<table class="table align-middle mb-0 bg-white mt-4">
+  <thead class="bg-light">
+    <tr>
+      <th>Name</th>
+      <th>Phone No</th>
+      <th>Date Of Birth</th>
+      <th>Qualification</th>
+      <th>Age</th>
+      <ng-container *ngIf="Role != 'User'">
+      <th>Actions</th></ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let user of User">
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+            src="https://avatars.githubusercontent.com/u/102711623?v=4"
+            alt=""
+            style="width: 45px; height: 45px"
+            class="rounded-circle"
+            />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">{{user.firstname}} {{user.lastname}}</p>
+            <p class="text-muted mb-0">{{user.email}}</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">{{user.phone}}</p>
+      </td>
+      <td>
+        <span class="badge-success rounded-pill d-inline">{{user.date}}</span>
+      </td>
+      <td>{{user.qualification}}</td>
+      <td>{{user.age}}</td>
+
+      <ng-container *ngIf="Role != 'User'">
+      <td>
+        <button type="button" class="btn btn-link btn-sm btn-rounded"
+          data-mdb-toggle="modal" data-mdb-target="#exampleModal"  [routerLink]="['grid3/'+user.id]" >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button type="button" class="btn btn-link btn-sm btn-rounded"
+        (click)="deleteItem(user.id)" >
+          <i class="material-icons">delete</i>
+        </button>
+      </td>
+    </ng-container>
+
+    </tr>
+   
+  </tbody>
+</table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <ng-template #editProfileModal let-modal>
+  <div class="modal-header">
+   <h5 class="modal-title" id="editProfileLabel">Edit Profile</h5>
+   <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+   </button>
+  </div>
+  
+  <div class="modal-body">
+   <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+     <label for="firstname" class="col-sm-4 col-form-label">First Name</label>
+     <div class="col-sm-8">
+      <input type="text" class="form-control" formControlName="firstname" id="firstname">
+     </div>
+    </div>
+    <div class="form-group row">
+     <label for="lastname" class="col-sm-4 col-form-label">Last Name</label>
+     <div class="col-sm-8">
+      <input type="text" class="form-control" formControlName="lastname" id="lastname">
+     </div>
+    </div>
+    <div class="form-group row">
+     <label for="email" class="col-sm-4 col-form-label">Email</label>
+     <div class="col-sm-8">
+      <input type="email" class="form-control" formControlName="email" id="email">
+     </div>
+    </div>
+    <div class="form-group row">
+      <label for="username" class="col-sm-4 col-form-label">Phone No</label>
+      <div class="col-sm-8">
+       <input type="text" class="form-control" formControlName="phone" id="phone">
+      </div>
+     </div>
+    <div class="form-group row">
+      <label for="username" class="col-sm-4 col-form-label">Date Of Birth</label>
+      <div class="col-sm-8">
+       <input type="text" class="form-control" formControlName="date" id="date">
+      </div>
+     </div>
+    <div class="form-group row">
+      <label for="username" class="col-sm-4 col-form-label">Age</label>
+      <div class="col-sm-8">
+       <input type="text" class="form-control" formControlName="age" id="age">
+      </div>
+     </div>
+    <div class="form-group row">
+      <label for="username" class="col-sm-4 col-form-label">Qualification</label>
+      <div class="col-sm-8">
+       <input type="text" class="form-control" formControlName="qualification" id="qualification">
+      </div>
+     </div>
+    <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+     <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+   </form>
+  </div>
+ </ng-template> -->
+  
+
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" #editProfileModal id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+

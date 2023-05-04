@@ -1,0 +1,54 @@
+<div mat-dialog-title>
+    <h1>Edit Details</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()" >
+<div mat-dialog-content class="content">
+  <div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text"  placeholder="EX. Kishan" formControlName="firstname">
+      </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="EX. Vaghela" formControlName="lastname">
+      </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput type="email" placeholder="EX. test@gmail.com" formControlName="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Date Of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Age</mat-label>
+      <input matInput type="number" placeholder="EX. 9876543210" formControlName="age">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone No</mat-label>
+      <input matInput type="tel" placeholder="EX. 9876543210" formControlName="phone">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Qualification</mat-label>
+        <input matInput type="text" placeholder="EX. B.Tech" formControlName="qualification">
+      </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'update' : 'save'}}</button>
+</div>
+</form>
+
+
+
+<!-- json-server --watch db.json -->

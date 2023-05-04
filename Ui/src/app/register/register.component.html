@@ -1,0 +1,446 @@
+<section class="vh-100% gradient-custom">
+  <div class="container py-2 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-10">
+        <div class="card shadow-2-strong card-registration shadow-lg p-3 mb-5
+          bg-white " style="border-radius: 30px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-6 pb-4 pb-md-0 mb-md-8 mb-4" style="text-align:
+              center;">Registration Form</h3>
+
+            <form [formGroup]="registerForm" (ngSubmit)="registerUser()"
+              class="needs-validation" novalidate>
+
+              <!-- Pofile Photo  -->
+              <div style="text-align: center;">
+                <label for="img"><img [src]="url" class="rounded-circle"
+                    height="100" width="100" id="img1" style="cursor: pointer;"></label>
+                <input class="form-control" type="file" style="display: none;
+                  visibility:none" (change)="onselectFile($event)" id="img"
+                  formControlName="profile"
+                  accept="image/xpng,image/jpeg,image/jpg"/>
+                <span style="color: red;" class="error" *ngIf="(profile &&
+                  profile.invalid) && (profile.touched || firstname &&
+                  firstname.touched && firstname.invalid )"><br>User Profile
+                  Picture is required!<br></span>
+                <br>
+              </div>
+              <br>
+
+              <!-- user name -->
+              <div class="row">
+                <div class="col-md-4 mb-4 mt-3">
+
+
+                  <div class="form-outline">
+                    <input type="text" id="firstname" class="form-control
+                      form-control-lg" formControlName="firstname"
+                      placeholder="Enter a First Name" required=""/>
+                    <span style="color: red;" *ngIf="firstname &&
+                      firstname.invalid && firstname.touched">Please enter first name</span>
+                    <div *ngIf="(submitted || f['firstname'].touched)&&
+                      f['firstname'].errors" class="text-danger">
+                      <!-- <div *ngIf="f['firstname'].errors['required']"> Confirm
+                        Password is Required</div> -->
+
+                    </div>
+                  </div>
+                </div>
+
+                  <div class="form-outline col-md-4 mb-4" style="margin-top:
+                    15px;">
+                    <input type="text" id="middleName" class="form-control
+                      form-control-lg" formControlName="middlename"
+                      placeholder="Enter a Middle Name" required="" />
+                    <span style="color: red;" *ngIf="middlename &&
+                      middlename.invalid && middlename.touched">Please enter middle
+                      name</span>
+                  </div>
+                  <div class="col-md-4 mb-4 mt-3">
+                    <div class="form-outline">
+                      <input type="text" id="lastName" class="form-control
+                        form-control-lg" formControlName="lastname"
+                        placeholder="Enter a Last Name" required/>
+                      <span style="color: red;" *ngIf="lastname &&
+                        lastname.invalid && lastname.touched">Please enter last name</span>
+                    </div>
+                  </div>
+              </div>
+
+
+              <!-- User Detail -->
+              <!-- <div class="row">
+                <h6 class="mb-2 pb-1">Gender: </h6>
+                <div class="form-check form-check-inline" style="margin: 1px 13px;">
+                  <div *ngFor="let gender of Genders">
+                    <input type="radio" formControlName="gender1"
+                      class="form-check-input" value="{{gender}}"
+                      (change)="radiochange($event)" required>
+                    <p class="checkbox-inline">{{gender}}</p>
+                  </div>
+                  <span style="color: red;" *ngIf="(gender1 && gender1.invalid)
+                    && (gender1.touched )">gender is required.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-check form-check-inline" style=" margin: -41px
+                  79px;">
+                  <div *ngFor="let gender of Genders1">
+                    <input type="radio" formControlName="gender1"
+                      class="form-check-input" value="{{gender}}"
+                      (change)="radiochange($event)" required>
+                    <p class="checkbox-inline">{{gender}}</p>
+                  </div>
+                  <span style="color: red;" *ngIf="(gender1 && gender1.invalid)
+                    && (gender1.touched )">gender is required.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-check form-check-inline" style="margin: -41px
+                  165px;">
+                  <div *ngFor="let gender of Genders2">
+                    <input type="radio" formControlName="gender1"
+                      class="form-check-input" value="{{gender}}"
+                      (change)="radiochange($event)" required>
+                    <p class="checkbox-inline">{{gender}}</p>
+                  </div>
+                  <span style="color: red;" *ngIf="(gender1 && gender1.invalid)
+                    && (gender1.touched  )">gender is required.</span>
+                </div>
+              </div> -->
+
+
+              <!-- Dob -->
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <label class="form-label" style="width: 95px;"
+                      for="birthdate">Date Of Birth</label>
+                    <input type="date" id="dob" class=" form-control
+                      form-control-lg " [(ngModel)]="year"
+                      formControlName="date" placeholder="Select a Birthdate"
+                      required="" />
+                    <span style="color: red;" *ngIf="date && date.invalid &&
+                      date.touched">Date is required.</span>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <label class="form-label" for="Age">Age</label>
+                    <input type="text" [(ngModel)]="age" id="Age" class="form-control
+                      form-control-lg " style="padding: 11px 10px;"
+                      value="{{age}}"  formControlName="Age" input type="button" value="get
+                      age" (click)="onSubmit()" class="form-control col-md-6 "
+                      readonly required/>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Email/Password input -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-outline" style="margin-bottom: 30px;">
+                    <input type="email" id="emailAddress" class="form-control
+                      form-control-lg" formControlName="email"
+                      placeholder="Enter a Email Address" required />
+                    <span style="color: red;" *ngIf="user && user.invalid &&
+                      user.touched">Please enter a valid email address</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-outline ">
+                    <show-hide-password size="lg" [btnOutline]="false">
+                      <input type="password" id="password" class="form-control
+                        form-control-lg" formControlName="password"
+                        placeholder="Enter a valid Password" required />
+                    </show-hide-password>
+                    <span style="color: red;" *ngIf="password &&
+                      password.invalid && password.touched">password field that
+                      must contain 6 or more characters that are of at least one
+                      number, and one uppercase and lowercase letter</span>
+                  </div>
+                </div>
+              </div>
+                <div class="row">
+                <div class="form-outline" style="margin-bottom: 9px;">
+                  <input type="number" [(ngModel)]="cc" id="phone" namr="phone"
+                    class="form-control form-control-lg w-100" required ng2TelInput
+                     formControlName="phone"
+                    placeholder="Enter a Phone No"/> <br>
+                  <span style="color: red;" *ngIf="phone && phone.invalid &&
+                    phone.touched"> Please enter a valid PhoneNo</span>
+            
+                  <link
+                    href="/path/to/material-icons/iconfont/material-icons.css"
+                    rel="stylesheet">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <h6 class="mb-2 pb-1">Gender: </h6>
+                <div class="form-check form-check-inline" style="margin: 1px 13px;">
+                  <div *ngFor="let gender of Genders">
+                    <input type="radio" formControlName="gender"
+                      class="form-check-input" value="{{gender}}"
+                      (change)="radiochange($event)" required>
+                    <p class="checkbox-inline">{{gender}}</p>
+                  </div>
+                  <span style="color: red;" *ngIf="(gender && gender.invalid)
+                    && (gender.touched )">gender is required.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-check form-check-inline" style=" margin: -41px
+                  79px;">
+                  <div *ngFor="let gender of Genders1">
+                    <input type="radio" formControlName="gender"
+                      class="form-check-input" value="{{gender}}"
+                      (change)="radiochange($event)" required>
+                    <p class="checkbox-inline">{{gender}}</p>
+                  </div>
+                  <span style="color: red;" *ngIf="(gender && gender.invalid)
+                    && (gender.touched )">gender is required.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-check form-check-inline" style="margin: -41px
+                  165px;">
+                  <div *ngFor="let gender of Genders2">
+                    <input type="radio" formControlName="gender"
+                      class="form-check-input" value="{{gender}}"
+                      (change)="radiochange($event)" required>
+                    <p class="checkbox-inline">{{gender}}</p>
+                  </div>
+                  <span style="color: red;" *ngIf="(gender && gender.invalid)
+                    && (gender.touched  )">gender is required.</span>
+                </div>
+              </div>
+          
+            
+
+
+              <!-- Address -->
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="text" id="address" class="form-control
+                      form-control-lg" formControlName="address"
+                      placeholder="Enter a Address- House-no,Street" required />
+                    <span style="color: red;" *ngIf="address && address.invalid
+                      && address.touched">Please Enter a valid Address</span>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="text" id="address" class="form-control
+                      form-control-lg" formControlName="address"
+                      placeholder="Landmark,Area-pincode" required />
+                    <span style="color: red;" *ngIf="address && address.invalid
+                      && address.touched">Please Enter a valid Address</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- select Country -->
+              <!-- <form>
+                <div class="row">
+
+                  <div class="col-md-4 mb-2 pb-2">
+                    <fieldset>
+                      <select class="select form-control-lg px-mb-5" 
+                        style="width: 80%;" #country 
+                        (change)="onCountryChange($event)" formControlName="Country1" >
+                        <option [value]="null">-- Select Country --</option>
+                        <option *ngFor="let country of countries"
+                          [value]="country | json">
+                          {{ country.flag }}&nbsp;&nbsp;{{ country.name }}
+                        </option>
+                      </select>
+                      <span style="color: red;" class="error" *ngIf="(Country1 &&
+                      Country1.invalid) && (Country1.touched || firstname &&
+                      firstname.touched && firstname.invalid )"><br>User Profile
+                      Picture is required!<br></span>
+                    </fieldset>
+                  </div>
+
+
+                  <div class="col-md-4 mb-2 pb-2">
+                    <fieldset>
+                      <select class="select form-control-lg px-xl-5"
+                        style="width: 90%;" #state 
+                        (change)="onStateChange($event)"  formControlName="State1" >
+                        <option value="0" disabled>Choose City</option>
+                        <option [value]="null">-- Select State --</option>
+                        <option *ngFor="let state of states" [value]="state |
+                          json">
+                          {{ state.name }}
+                        </option>
+                      </select>
+                      <span style="color: red;" class="error" *ngIf="(State1 &&
+                      State1.invalid) && (State1.touched || firstname &&
+                      firstname.touched && firstname.invalid )"><br>User Profile
+                      Picture is required!<br></span>
+                    </fieldset>
+                  </div>
+
+
+                  <div class="col-md-4 mb-4 pb-2">
+                    <fieldset>
+                      <select formControlName="City1" class="select form-control-lg px-xl-5"
+                        style="width: 90%;" #city 
+                        (change)="onCityChange($event)"   >
+                        <option [value]="null">-- Select City --</option>
+                        <option *ngFor="let city of cities" [value]="city |
+                          json">
+                          {{ city.flag }}&nbsp;&nbsp;{{ city.name }}
+
+                        </option>
+                      </select>
+                      <span style="color: red;" class="error" *ngIf="(City1 &&
+                      City1.invalid) && (City1.touched || firstname &&
+                      firstname.touched && firstname.invalid )"><br>User Profile
+                      Picture is required!<br></span>
+                    </fieldset>
+                  </div>
+                </div>
+              </form> -->
+
+
+              <!-- Select country -->
+              <div class="row mb-4">
+
+                <div class="row ">
+
+                  <div class="col-md-4 mb-1 pb-1">
+                    <fieldset>
+                      <label>COUNTRY</label>
+                      <select formControlName="Country1"
+                        class="select form-control-lg px-xl-6" style="width:
+                        100%;"
+                        #country name="country" id="country"
+                        (change)="onCountryChange($event)">
+
+                        <option [value]="null">Select Country</option>
+                        <option *ngFor="let country of countries"
+                          [value]="country | json">
+                          {{ country.flag }}&nbsp;&nbsp;{{ country.name }}
+                        </option>
+                      </select>
+                      <span
+                        *ngIf="(Country1 && Country1.invalid) &&
+                        (Country1.touched || firstname && firstname.touched ) "
+                        style="color: red;">country
+                        is required. </span>
+
+                    </fieldset>
+                  </div>
+                  <div class="col-md-4 mb-1 pb-1">
+                    <fieldset>
+                      <label>STATE</label>
+                      <select formControlName="State1"
+                        class="select form-control-lg px-xl-6" style="width:
+                        100%;"
+                        #state name="state" id="state" required
+                        (change)="onStateChange($event)">
+                        <label>STATE</label>
+                        <option [value]="null">Select State</option>
+                        <option *ngFor="let state of states" [value]="state |
+                          json">
+                          {{ state.name }}
+                        </option>
+                      </select>
+                      <span
+                        *ngIf="(State1 && State1.invalid) && (State1.touched ||
+                        firstname && firstname.touched )"
+                        style="color: red;">state
+                        is required. </span>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-4 mb-1 pb-1">
+
+                    <fieldset>
+                      <label>CITY</label>
+                      <select formControlName="City1"
+                        class="select form-control-lg px-xl-6" style="width:
+                        100%;" #city
+                        name="city" id="city" (change)="onCityChange($event)">
+                        <option [value]="null">Select City</option>
+                        <option *ngFor="let city of cities" [value]="city |
+                          json">
+                          {{ city.name }}
+                        </option>
+
+                      </select>
+                      <span
+                        *ngIf="(City1 && City1.invalid) && (City1.touched ||
+                        firstname && firstname.touched )"
+                        style="color: red;">city
+                        is required. </span>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!-- Hobbies -->
+              <h6 class="mb-6 pb-2 mx-1">Hobbies: </h6>
+              <span *ngIf="(hobbie && hobbie.invalid) && (hobbie.touched)"
+                        style="color: red;" >hobbie
+                        is required.  </span>
+              <form class="d-md-flex justify-content-start-ml-5 mx-2"
+                [formGroup]="registerForm" (ngSubmit)="registerUser()"
+                novalidate>
+                <div *ngFor="let data of Data; let i=index">
+                  <label>
+                    <input class="col-md-2-mb-2 "
+                      formControlName="hobbie" type="checkbox"
+                      [value]="data.value" (change)="onCheckboxChange($event)" required />
+                    {{data.name}}&nbsp;&nbsp;&nbsp; </label><br>
+                </div>
+                
+              </form>
+
+
+              <!-- Qualification -->
+              <div class="row">
+                <div class="form-outline">
+                  <input type="text" id="desc" class="form-control
+                    form-control-lg my-3 " required placeholder="Qualification"
+                    formControlName="Qualification" required />
+                  <span style="color: red;" *ngIf="Qualification &&
+                    Qualification.invalid && Qualification.touched">Enter a
+                    Qualification </span>
+                </div>
+              </div>
+
+              <!-- Submit -->
+              <div class="mt-4 pt-2">
+                <input (click)="onchange()" class="btn btn-primary btn-lg"
+                  type="submit" value="Submit"/>
+              </div>
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account?
+                  <a
+                    class="link-danger" routerLink="">Login</a></p>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="d-flex flex-column flex-md-row text-center text-md-start
+    justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <div class="text-white mb-3 mb-md-0">
+      © Droisys India Pvt.Ltd 2023. All rights reserved.
+    </div>
+  </div>
+</section>

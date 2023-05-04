@@ -1,0 +1,110 @@
+<section class="vh-100" >
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form  [formGroup]="loginForm" (ngSubmit)="loginUser()" class="needs-validation" novalidate>
+
+            <!-- Title -->
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              <p class="lead fw-normal mb-0 me-3">Login</p>
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+  
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+  
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-linkedin-in"></i>
+              </button>
+            </div>
+  
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0">Or</p>
+            </div>
+  
+            <!-- Email input -->
+            <div class="form-outline">
+              <label class="form-label" for="emailAddress">Email</label>
+              <input type="email" name="email" id="emailAddress" class="form-control form-control-lg" placeholder="Enter EmailAddress" formControlName="email" required />
+              <span style="color: red;" *ngIf="email && email.invalid && email.touched">Please enter an email</span>
+            </div>
+
+            
+            
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="password">Password</label>
+              <show-hide-password size="lg" [btnOutline]="false">
+              <input class="eyeicon" type="password" id="password" name="password" class="form-control form-control-lg"
+              placeholder="Enter password" formControlName="password" formControlName="password" required />
+            </show-hide-password>
+              
+              <span style="color: red;" *ngIf="password && password.invalid && password.touched">password field that must contain 6 or more characters that are of at least one number, and one uppercase and lowercase letter<i class="bi bi-eye"></i></span>
+               
+              
+            </div>
+            
+  
+            <!-- Checkbox -->
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" required formControlName="check" />
+                <label class="form-check-label" for="form2Example3" >
+                  Remember me
+                </label><br>
+                <span style="color: red;" *ngIf="check && check.invalid && check.touched" >Check !!! </span>
+              </div>
+              <a href="#!" class="text-body" routerLink="forget">Forgot password?</a>
+            </div>
+  
+            <!-- submit -->
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <!-- <button  type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" > Login</button>  -->
+                  <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Login"  (click)="onchange()" >
+                  
+                </div> 
+                <!-- <a href="#!"  class="btn btn-primary btn-lg">Login</a> -->
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a 
+                  class="link-danger" routerLink="register">Register</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+      <!-- Copyright -->
+      <div class="text-white mb-3 mb-md-0">
+        © Droisys India Pvt.Ltd 2023. All rights reserved.
+      </div>
+      <!-- Copyright -->
+  
+      <!-- Right -->
+      <div>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#!" class="text-white">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </div>
+  </section>
